@@ -5,7 +5,10 @@
 
 import streamlit as st
 import pandas as pd
-from club_database import ClubDatabase
+try:
+    from cloud_database import CloudDatabase as Database
+except ImportError:
+    from club_database import ClubDatabase as Database
 from club_crawler import ClubCrawler
 
 
@@ -17,8 +20,8 @@ def main():
         layout="wide"
     )
 
-    # 初始化資料庫
-    db = ClubDatabase()
+    # 初始化資料庫（自動判斷使用本地或雲端）
+    db = Database()
 
     # 標題
     st.title("🔍 健康國小社團選課系統 - 學生搜尋工具 V2")

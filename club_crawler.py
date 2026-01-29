@@ -7,7 +7,10 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import re
-from club_database import ClubDatabase
+try:
+    from cloud_database import CloudDatabase as Database
+except ImportError:
+    from club_database import ClubDatabase as Database
 
 
 class ClubCrawler:
@@ -16,7 +19,7 @@ class ClubCrawler:
         self.password = password
         self.base_url = "http://www2.jkes.tp.edu.tw"
         self.session = None
-        self.db = ClubDatabase()
+        self.db = Database()
 
     def create_session(self):
         """建立並登入 session"""

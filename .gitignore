@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+*.egg-info/
+
+# 資料庫
+*.db
+*.sqlite
+club_data.db
+
+# Streamlit
+.streamlit/secrets.toml
+
+# 測試檔案
+check_*.py
+test_*.py
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# 環境變數
+.env
